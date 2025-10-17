@@ -9,34 +9,33 @@ Los scripts se organiza mediante un menú principal que redirige a diferentes sc
 
 Generación de claves RSA (2048 o 4096 bits): crea claves pública y privada en formato PEM.
 ./rsa_keys.sh
-# Tamaño: 2048
-# Ruta base: ./mis_claves/clave 
-# => Genera clave_private.pem y clave_public.pem
+Tamaño: 2048
+Ruta base: ./mis_claves/clave 
+=> Genera clave_private.pem y clave_public.pem
 
 Cifrado simétrico AES-256: permite generar una clave aleatoria, cifrar y descifrar archivos con AES y PBKDF2.
 ./aes_sym.sh
-# 1) Generar clave (key.bin)
-# 2) Cifrar archivo
-# 3) Descifrar archivo
+1) Generar clave (key.bin)
+2) Cifrar archivo
+3) Descifrar archivo
 
 Cifrado híbrido (RSA + AES): combina cifrado simétrico y asimétrico; cifra un archivo con AES y protege la clave AES con RSA.
-# 1) Cifrar archivo (usa clave pública RSA)
-# 2) Descifrar archivo (usa clave privada RSA)
+1) Cifrar archivo (usa clave pública RSA)
+2) Descifrar archivo (usa clave privada RSA)
 
-# Cifrar
+Cifrar
 ./hybrid_crypto.sh  # opción 1
-# => genera archivo.enc y archivo.key.enc
+=> genera archivo.enc y archivo.key.enc
 
-# Descifrar
+Descifrar
 ./hybrid_crypto.sh  # opción 2
-# => produce archivo_descifrado.txt
+=> produce archivo_descifrado.txt
 
 Gestión de claves públicas: permite visualizar, buscar, importar y exportar claves públicas dentro de un “keyring” local.
-# 1) Visualizar clave pública
-# 2) Buscar claves (*.pem, *.pub)
-# 3) Importar clave a keyring local
-# 4) Exportar clave pública
-
+1) Visualizar clave pública
+2) Buscar claves (*.pem, *.pub)
+3) Importar clave a keyring local
+4) Exportar clave pública
 
 
 El cifrado híbrido combina dos técnicas criptográficas:
